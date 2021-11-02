@@ -9,7 +9,7 @@ export const moviApi=createApi({
         getMoviData:builder.query({
             query:()=>({
                 url:`?apiKey=${process.env.REACT_APP_API_KEY}&s=${process.env.REACT_APP_MOVI_TEXT}&type=movie`,
-                params: { r: 'json'},
+                //params: { r: 'json'},
                 method:'GET'
             })
         })

@@ -4,9 +4,13 @@ import user from "../../images/user.png";
 import "./home.scss";
 import MovieListing from "../Movielisting/Movielisting";
 import { useGetMoviDataQuery } from '../../Service/MovieApi';
+import { useDispatch } from 'react-redux';
+import { addMovies } from '../../features/movies/moviSlice';
 const Home = () => {
+  const dispatch=useDispatch()
     const response=useGetMoviDataQuery()
-    console.log(response.data)
+    console.log(response)
+    dispatch(addMovies(response.data))
     return (
 
         <div>
