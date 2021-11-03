@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState={
-    movies:{}
+    movies:{},
+    shows:{},
+    selectedMoviOrShow:{}
 }
 const moviSlice=createSlice({
     name:"movies",
@@ -9,10 +11,20 @@ const moviSlice=createSlice({
         addMovies:(state,{payload})=>{
             state.movies=payload;
         },
+        addShows:(state,{payload})=>{
+            state.shows=payload;
+        },
 
     }
 })
+
 export const {addMovies}=moviSlice.actions;
+export const {addShows}=moviSlice.actions;
+
+
+
 export const getAllMovies = (state) => state.movies.movies;
+export const getAllShows = (state) => state.movies.shows;
+export const getSelectedMovieOrShow = (state) => state.movies.selectMovieOrShow;
 
 export default moviSlice.reducer

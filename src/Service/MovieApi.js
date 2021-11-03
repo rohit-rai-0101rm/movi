@@ -12,8 +12,22 @@ export const moviApi=createApi({
                 //params: { r: 'json'},
                 method:'GET'
             })
-        })
+        }),
+        getShowsData:builder.query({
+            query:()=>({
+                url:`?apiKey=${process.env.REACT_APP_API_KEY}&s=${process.env.REACT_APP_MOVI_TEXT}&type=series`,
+                //params: { r: 'json'},
+                method:'GET'
+            })
+        }),
+        getMovieorShowsbyId:builder.query({
+            query:(imdbId)=>({
+                url:`?apiKey=${process.env.REACT_APP_API_KEY}&i=${imdbId}&Plot=full`,
+                params: { r: 'json'},
+                method:'GET'
+            })
+        }),
         
     })
 })
-export const{useGetMoviDataQuery}=moviApi
+export const{useGetShowsDataQuery,useGetMoviDataQuery,useGetMovieorShowsbyIdQuery}=moviApi

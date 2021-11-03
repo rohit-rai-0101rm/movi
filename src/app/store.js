@@ -5,6 +5,7 @@ import moviReducer from '../features/movies/moviSlice'
 export const store = configureStore({
   reducer: {
     [moviApi.reducerPath]:moviApi.reducer, 
-    movies:moviReducer
+    movies:moviReducer,
+  
   },
 });
