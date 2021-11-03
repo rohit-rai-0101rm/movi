@@ -8,9 +8,11 @@ import { useDispatch } from 'react-redux';
 import { addMovies } from '../../features/movies/moviSlice';
 const Home = () => {
   const dispatch=useDispatch()
-    const response=useGetMoviDataQuery()
-    console.log(response)
-    dispatch(addMovies(response.data))
+  const{data,isFetching}=useGetMoviDataQuery()
+    if(isFetching) return `loading...`
+
+    console.log(data.Search)
+    dispatch(addMovies(data))
     return (
 
         <div>

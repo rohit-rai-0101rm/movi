@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState={
-    movies:[]
+    movies:{}
 }
 const moviSlice=createSlice({
     name:"movies",
