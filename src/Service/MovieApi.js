@@ -23,8 +23,8 @@ export const moviApi=createApi({
         getMovieorShowsbyId:builder.query({
             query:(imdbId)=>({
                 url:`?apiKey=${process.env.REACT_APP_API_KEY}&i=${imdbId}&Plot=full`,
-                params: { r: 'json'},
-                method:'GET'
+
+                method:'POST'
             })
         }),
         

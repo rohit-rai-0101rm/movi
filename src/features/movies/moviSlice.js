@@ -14,12 +14,16 @@ const moviSlice=createSlice({
         addShows:(state,{payload})=>{
             state.shows=payload;
         },
+        addSelectedMoviorShow:(state,{payload})=>{
+            state.selectedMoviOrShow=payload
+        }
 
     }
 })
 
 export const {addMovies}=moviSlice.actions;
 export const {addShows}=moviSlice.actions;
+export const {addSelectedMoviorShow}= moviSlice.actions;
 
 
 
